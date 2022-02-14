@@ -28,7 +28,7 @@
 * Service layer provides services to our controllers
 * Also while doing any work, if it needs any data then it will contact the next layer i.e Repository layer to bring the data(just like chef in the kitchen does not brings raw material from store room but there are persons assigned for this task, he just asks them to bring the material) similarly service layer asks the repository layer to bring the data from database and then repository layer will give the data to service layer.
 
-### 3. DAO/Repository Layer
+### 3. DAO(Data Access Object)/Repository Layer
 * Brings data from database and gives to service layer
 
 # API URLs for course App
