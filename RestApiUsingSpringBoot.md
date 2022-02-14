@@ -31,6 +31,11 @@
 ### 3. DAO(Data Access Object)/Repository Layer
 * Brings data from database and gives to service layer
 
+
+
+
+![Screenshot from 2022-02-13 13-01-48](https://user-images.githubusercontent.com/42698268/153867074-2a55fe3b-51a9-46fc-a4b4-e7bef6d63088.png)
+
 # API URLs for course App
 
 ![Screenshot from 2022-02-13 13-10-56](https://user-images.githubusercontent.com/42698268/153766968-0d7b29be-1f82-4708-9d9d-665772d06d3d.png)
