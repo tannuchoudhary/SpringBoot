@@ -3,7 +3,7 @@
 ![Screenshot from 2022-02-06 18-29-23](https://user-images.githubusercontent.com/42698268/153379293-ed8c4265-a90b-473d-9508-4c709301bf65.png)
 
 ![Screenshot from 2022-02-06 18-29-49](https://user-images.githubusercontent.com/42698268/153379301-6e9b2eca-956b-42a3-8f91-399ead8b1bf5.png)
-
+what 
 # 2. Selecting Dependencies which our project need
 * Spring web
 * Spring data JPA for connecting through database using JPA and Hybernet
