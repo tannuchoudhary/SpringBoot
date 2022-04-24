@@ -27,12 +27,17 @@
 
 # Step 1 - setting application.properties
 
-```
+```python3
 # this is to connect the jdbc to mysql database,
 # we will provide port no for mysql which is generally 3306
 # followed by name of database which is movies in our case
 # we will provide a property to turn ssl(secure socket layer) off
-# SSL stands for Secure Sockets Layer and, in short, it's the standard technology for keeping an internet connection secure and safeguarding any sensitive data that is being sent between two systems, preventing criminals from reading and modifying any information transferred, including potential personal details.
+
+# SSL stands for Secure Sockets Layer and, in short, it's the standard technology for keeping an 
+# internet connection secure and safeguarding any sensitive data that is being sent between two systems,
+# preventing criminals from reading and modifying any information transferred, including potential 
+# personal details
+
 spring.datasource.url=jdbc:mysql://localhost:3306/ems?useSSL=false
 
 spring.datasource.username=tannu
@@ -50,7 +55,9 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialec
 
 # create, create-drop
 # we are configuring one more property i.e hibernate auto ddl,
-# this property is needed to automatically create the tables in a database if they do not exist and to update the existing table
+
+# this property is needed to automatically create the tables in a database if they do not exist and to
+# update the existing table
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.show_sql=true
 spring.jpa.properties.hibernate.format_sql=true
