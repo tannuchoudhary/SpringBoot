@@ -1,10 +1,11 @@
 
-
+# API
 ![Screenshot from 2022-04-23 23-18-29](https://user-images.githubusercontent.com/42698268/164937909-d6ac8c6c-d7c8-4b40-8396-2d830f26b574.png)
 
 
 ![Screenshot from 2022-04-23 23-18-41](https://user-images.githubusercontent.com/42698268/164937940-0c8b1bd2-65f4-4db2-a9cd-f0bf73770838.png)
 
+# REST API
 ![Screenshot from 2022-04-23 23-30-28](https://user-images.githubusercontent.com/42698268/164937967-0e0fd0d5-4a14-4ca7-8d84-ee073744b829.png)
 
 
@@ -62,4 +63,46 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.show_sql=true
 spring.jpa.properties.hibernate.format_sql=true
 ```
-# Create Movies JPA Entity
+# Creating [JPA Entity](https://www.baeldung.com/jpa-entities#:~:text=Entities%20in%20JPA%20are%20nothing,a%20row%20in%20the%20table.) for employee
+
+
+
+![Screenshot from 2022-05-28 14-16-41](https://user-images.githubusercontent.com/42698268/171099023-ce327121-0e61-4d9d-a249-78170598202b.png)
+
+![Screenshot from 2022-05-31 10-51-18](https://user-images.githubusercontent.com/42698268/171099028-f7accdd0-a420-456d-a1f8-13a3e8c55a1b.png)
+
+
+
+![Screenshot from 2022-05-31 10-51-34](https://user-images.githubusercontent.com/42698268/171099037-dbbbcc0b-449f-4819-b58d-19ee92ab9e67.png)
+
+# MYSQL commands
+
+
+### To enter into mysql
+``` mysql -u username -p ``` 
+
+Now enter ```Password```
+
+### To create a database
+``` CREATE DATABASE db_name ```
+
+### To enter into database
+``` USE db_name ```
+
+### To create table
+``` CREATE TABLE table_name(id int, name varchar(30), email varchar(30)); ```
+
+### To delete the whole table from database
+``` DROP TABLE table_name ```
+
+
+
+
+
+
+
+
+
+
+
+
