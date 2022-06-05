@@ -186,20 +186,33 @@ spring.jpa.properties.hibernate.format_sql=true
 # Step 8- Create EmployeeRepository Interface
 
 * we want it because we need to perform CRUD operation on employee jpa repository
+* Create an interface in net.javaguides.springboot.repository named EmployeeRepository
+* We will extend this interface to JpaRepository
+* JpaRepository will require two parameters, first is the type of the enitity which is Employee in our case and second is the type of the primary key i.e long in our case
+* Now EmployeeRepository will get CRUD methods for employee JPA entity
+* Here we don't need to add @Repository annotation to our EmployeeRepository interface because JpaRepository internally provides @Repository annotation, i.e SimpleJpaRepository provides @Repository annotation internally
+* We also don't need to add @Transactional annotation in service layer because SimpleJpaRepository provides @Transactional annotation internally
 
 
+![Screenshot from 2022-06-05 13-05-35](https://user-images.githubusercontent.com/42698268/172040635-b2e0d604-2389-4b0e-b3b5-fbbd96ad75de.png)
 
 
+![Screenshot from 2022-06-05 13-07-01](https://user-images.githubusercontent.com/42698268/172040642-2f8732aa-9b58-4c1c-8c89-9c9da7776d01.png)
+* Before building REST APIs, first we will create some exception classes 
+
+## Step 9- Create Custom Exceptions
+* Create ResourceNotFoundException class inside exception package
+* This is to handle the exception if exception occurs
+* Now define the properties for this exception class
+* resourceName - we are going to return the resource name that is not exising in the database to the client, similarly the fieldName and fieldvalue
+* filedValue will be defined as object type, because fieldValue can be of any type
 
 
+![Screenshot from 2022-06-05 13-41-17](https://user-images.githubusercontent.com/42698268/172041718-08948bd3-8711-4b77-bb6d-c3c045c2dc4b.png)
 
 
-
-
-
-
-
-
+* Now we will extend our exception class from RuntimeException
+* 
 
 
 
