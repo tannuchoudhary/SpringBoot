@@ -59,6 +59,24 @@ Now enter ```Password```
 ### To delete the whole table from database
 ``` DROP TABLE table_name ```
 
+### To view all tables in a DB
+```SHOW TABLES```
+
+### To view content of the table
+``` SELECT * FROM tableName ```
+
+### To describe table
+``` DESCRIBE tableName ```
+* Field – Indicates column name.
+* Type – Specifies data type for the column (varchar for characters, int for numbers).
+* Null – Indicates whether the column can remain with null values.
+* Key – Displays the primary column.
+* Default – Displays the column’s default value.
+* Extra – Indicates additional information about the columns.
+
+
+![Screenshot from 2022-06-05 12-47-32](https://user-images.githubusercontent.com/42698268/172040046-7426aee5-84b6-4ac0-92f8-d02377f50479.png)
+
 
 # Step 4- Setting application.properties
 
@@ -158,6 +176,16 @@ spring.jpa.properties.hibernate.format_sql=true
 * You can define column name and the attribute as not nullable by nullable=false
 
 ![Screenshot from 2022-05-31 12-01-48](https://user-images.githubusercontent.com/42698268/172038802-c0a828ed-5151-49ef-b267-6e89561fe8af.png)
+
+# Step 7- Run your spring boot application
+* Run your spring boot application and check whether an Employee table gets created or not
+* Hibernate will automatically generate this table because we have added ddl auto property in application.properties
+* Now Employee JPA entity is successfully created
+
+
+# Step 8- Create EmployeeRepository Interface
+
+* we want it because we need to perform CRUD operation on employee jpa repository
 
 
 
