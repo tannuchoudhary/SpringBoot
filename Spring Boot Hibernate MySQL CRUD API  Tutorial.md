@@ -221,7 +221,12 @@ spring.jpa.properties.hibernate.format_sql=true
 * Now we have forgotten to add serialId, so add ``` private static final long serialVersionUID=1L; ```
 * @Response status annotation can be used on the top of the REST API, but instead of repeating this annotation for each and every REST API that returns status, we will use it above the exception class itself
 
-![Screenshot from 2022-06-06 11-52-21](https://user-images.githubusercontent.com/42698268/172106608-9abecdaf-47fd-41d1-a5db-a8153cc5a255.png)
+
+
+![Screenshot from 2022-06-06 12-33-45](https://user-images.githubusercontent.com/42698268/172112097-c90f6363-c4fa-419e-ae6d-143c29d684ab.png)
+
+
+
 
 * ```@ResponseStatus(value = HttpStatus.NOT_FOUND)```, whenever our REST API throw ResourceNotFoundException then REST API will send NOT_FOUND status to the client.
 
