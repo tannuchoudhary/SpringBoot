@@ -226,7 +226,9 @@ spring.jpa.properties.hibernate.format_sql=true
 * ```@ResponseStatus(value = HttpStatus.NOT_FOUND)```, whenever our REST API throw ResourceNotFoundException then REST API will send NOT_FOUND status to the client.
 
 # Step 10- Build Create Employee REST API
-
+* To save the data into employees table
+* To do that, first we are going to implement service layer because controller layer is dependent on service layer
+* 
 
 
 
