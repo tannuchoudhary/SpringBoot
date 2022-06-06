@@ -212,10 +212,20 @@ spring.jpa.properties.hibernate.format_sql=true
 
 
 * Now we will extend our exception class from RuntimeException
-* 
+* And then we will generate constructors for all the fields mentioned in the ResourceNotFoundException class
+* Right click->source->Generate constructors using fields->select all fields ->Generate
+* Now pass message to the super class constructor, e.g
 
+``` super.(String.format("%s not found with %s : '%s'", resourceName, fieldName, fieldValue));```
+* generate getters for all the field values
+* Now we have forgotten to add serialId, so add ``` private static final long serialVersionUID=1L; ```
+* @Response status annotation can be used on the top of the REST API, but instead of repeating this annotation for each and every REST API that returns status, we will use it above the exception class itself
 
+![Screenshot from 2022-06-06 11-52-21](https://user-images.githubusercontent.com/42698268/172106608-9abecdaf-47fd-41d1-a5db-a8153cc5a255.png)
 
+* ```@ResponseStatus(value = HttpStatus.NOT_FOUND)```, whenever our REST API throw ResourceNotFoundException then REST API will send NOT_FOUND status to the client.
+
+# Step 9- Build Create Employee REST API
 
 
 
