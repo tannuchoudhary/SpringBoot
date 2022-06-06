@@ -200,7 +200,7 @@ spring.jpa.properties.hibernate.format_sql=true
 ![Screenshot from 2022-06-05 13-07-01](https://user-images.githubusercontent.com/42698268/172040642-2f8732aa-9b58-4c1c-8c89-9c9da7776d01.png)
 * Before building REST APIs, first we will create some exception classes 
 
-## Step 9- Create Custom Exceptions
+# Step 9- Create Custom Exceptions
 * Create ResourceNotFoundException class inside exception package
 * This is to handle the exception if exception occurs
 * Now define the properties for this exception class
@@ -225,7 +225,7 @@ spring.jpa.properties.hibernate.format_sql=true
 
 * ```@ResponseStatus(value = HttpStatus.NOT_FOUND)```, whenever our REST API throw ResourceNotFoundException then REST API will send NOT_FOUND status to the client.
 
-# Step 9- Build Create Employee REST API
+# Step 10- Build Create Employee REST API
 
 
 
