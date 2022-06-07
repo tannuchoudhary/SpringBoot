@@ -235,8 +235,21 @@ spring.jpa.properties.hibernate.format_sql=true
 * To do that, first we are going to implement service layer because controller layer is dependent on service layer
 * Create a package net.javaguides.springboot.service and an interface EmployeeService inside it
 * To implement it, create a class in service.impl called EmployeeServiceImpl 
-* Now implement 
+* Now implement the EmployeeService interface
+* Whenever you add service class make sure to add @Service annotation
+* make sure to choose @Service annotation from org.springframework.stereotype.Service
+* declare saveEmployee() method in the EmployeeService interface, and define it in the impl class, it will save the employee information in database
+![Screenshot from 2022-06-07 12-39-49](https://user-images.githubusercontent.com/42698268/172318139-a7c436ae-d2fe-44ad-bebb-13a4e7a93c22.png)
+* Go to the impl class and click on add unimplemented methods 
+![Screenshot from 2022-06-07 12-39-27](https://user-images.githubusercontent.com/42698268/172318164-91481979-c097-42ed-ba00-98b3177f30a6.png)
+* Before implementing this method, we need to inject dependency, i.e EmployeeService dependency
 
+
+![Screenshot from 2022-06-07 12-41-48](https://user-images.githubusercontent.com/42698268/172318512-d8399f34-abcf-4f6d-b58b-56819404d42e.png)
+
+* We use constructor-based dependency injection when we have mandatory parameters
+* And we use setter-based dependency injection when we have optional parameters
+* As we are going to use EmployeeRepository as mandatory so we are going to choose constructor-based dependency injection
 
 
 
