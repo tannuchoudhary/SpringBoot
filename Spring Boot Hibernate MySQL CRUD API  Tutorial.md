@@ -242,7 +242,10 @@ spring.jpa.properties.hibernate.format_sql=true
 ![Screenshot from 2022-06-07 12-39-49](https://user-images.githubusercontent.com/42698268/172318139-a7c436ae-d2fe-44ad-bebb-13a4e7a93c22.png)
 * Go to the impl class and click on add unimplemented methods 
 ![Screenshot from 2022-06-07 12-39-27](https://user-images.githubusercontent.com/42698268/172318164-91481979-c097-42ed-ba00-98b3177f30a6.png)
-* Before implementing this method, we need to inject dependency, i.e EmployeeService dependency
+```diff
+- Before implementing this method, we need to inject dependency, i.e EmployeeService dependency
+
+```
 
 
 ![Screenshot from 2022-06-07 12-41-48](https://user-images.githubusercontent.com/42698268/172318512-d8399f34-abcf-4f6d-b58b-56819404d42e.png)
@@ -272,7 +275,11 @@ spring.jpa.properties.hibernate.format_sql=true
 
 ![Screenshot from 2022-06-07 13-15-04](https://user-images.githubusercontent.com/42698268/172325607-31b5b981-34f5-4d30-90d6-9f394aac8d4d.png)
 
-* Now inject Employeeservice dependency into the 
+```diff
+- Now inject EmployeeService dependency into the EmployeeController class
+```
+
+![Screenshot from 2022-06-07 13-26-11](https://user-images.githubusercontent.com/42698268/172327300-861a0c50-229e-4ec7-9a9d-e32abb861f31.png)
 
 
 
