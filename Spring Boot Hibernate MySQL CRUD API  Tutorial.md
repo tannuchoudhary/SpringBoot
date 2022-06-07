@@ -253,15 +253,21 @@ spring.jpa.properties.hibernate.format_sql=true
 
 
 
+![Screenshot from 2022-06-07 12-51-58](https://user-images.githubusercontent.com/42698268/172322042-cf05a2c9-e325-4990-9ea1-880c7d7e8aa2.png)
 
 
 
+![Screenshot from 2022-06-07 13-01-25](https://user-images.githubusercontent.com/42698268/172322057-0e0a995e-7358-496b-8854-cb81fc12f340.png)
 
+* Whenever spring bean finds only one constructor therefore the spring automatically configures it, we don't need to write @Autowire annotation 
 
+### 3 Important things are:
+1. You don't need to add @Repository annotation for EmployeeRepository interface as spring data JPA has already taken care of it by adding it in its declaration
+2. You don't need to add @Transaction in impl file above EmployeeServiceImpl class as spring data JPA internally provides transactions to all its methods
+3. We don't need to provide @Autowire annotation to the constructor in the impl file whenever spring boot finds spring bean, it has only one constructor then it autowires the dependency 
 
-
-
-
+* Now we will use employeeRepository and its method save and save employee entity to the database
+* 
 
 
 
