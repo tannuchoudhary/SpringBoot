@@ -267,8 +267,12 @@ spring.jpa.properties.hibernate.format_sql=true
 3. We don't need to provide @Autowire annotation to the constructor in the impl file whenever spring boot finds spring bean, it has only one constructor then it autowires the dependency 
 
 * Now we will use employeeRepository and its method save and save employee entity to the database
-* 
+* Now let us create a controller class called EmployeeController
+* Use @RestController, @RestController = @Controller + @ResponseBody
 
+![Screenshot from 2022-06-07 13-15-04](https://user-images.githubusercontent.com/42698268/172325607-31b5b981-34f5-4d30-90d6-9f394aac8d4d.png)
+
+* Now inject Employeeservice dependency into the 
 
 
 
