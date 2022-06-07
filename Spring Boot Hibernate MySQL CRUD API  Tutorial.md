@@ -233,7 +233,9 @@ spring.jpa.properties.hibernate.format_sql=true
 # Step 10- Build Create Employee REST API
 * To save the data into employees table
 * To do that, first we are going to implement service layer because controller layer is dependent on service layer
-* 
+* Create a package net.javaguides.springboot.service and an interface EmployeeService inside it
+* To implement it, create a class in service.impl called EmployeeServiceImpl 
+* Now implement 
 
 
 
