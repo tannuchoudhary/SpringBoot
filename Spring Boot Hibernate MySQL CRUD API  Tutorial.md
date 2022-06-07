@@ -281,8 +281,11 @@ spring.jpa.properties.hibernate.format_sql=true
 
 ![Screenshot from 2022-06-07 13-26-11](https://user-images.githubusercontent.com/42698268/172327300-861a0c50-229e-4ec7-9a9d-e32abb861f31.png)
 
-
-
+* We will use constructor-based dependency injection
+* Now we will generate Response for the REST API
+* For that we will use ResponseEntity, beacuse we can provide complete reponse details in that class
+* We will use @PostMapping annotatation as this will handle post http request
+* This post request contains employee json object and that we need to bind to the java object i.eemployee object
 
 
 
