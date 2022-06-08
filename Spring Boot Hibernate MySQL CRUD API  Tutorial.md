@@ -283,9 +283,22 @@ spring.jpa.properties.hibernate.format_sql=true
 
 * We will use constructor-based dependency injection
 * Now we will generate Response for the REST API
-* For that we will use ResponseEntity, beacuse we can provide complete reponse details in that class
+* For that we will use ResponseEntity, beacuse we can provide complete reponse details in that class, e.g we can add status to the class header etc
 * We will use @PostMapping annotatation as this will handle post http request
-* This post request contains employee json object and that we need to bind to the java object i.eemployee object
+* This post request contains employee json object and that we need to bind to the java object i.e employee object, for that we will use @RequestBody annotation
+
+
+![Screenshot from 2022-06-08 11-41-07](https://user-images.githubusercontent.com/42698268/172546001-91dd9bb5-f2da-4b8f-88ed-9320c85f3591.png)
+
+
+
+* Return the ResponseEntity by saving employee data into it
+* The REST API will create the resource that is why the HttpStatus will be set as created
+* We will add @RequestMapping annotation and will provide the base url on top the class, we can also define the url at @PostMapping but in order to maintain the employees url at common place we have defined it at @RequestMapping
+* Now run the spring boot application and test the restline api using postman
+
+![Screenshot from 2022-06-08 11-57-18](https://user-images.githubusercontent.com/42698268/172546941-9320b2a5-ad91-46e7-b901-dd855b5306cd.png)
+
 
 
 
