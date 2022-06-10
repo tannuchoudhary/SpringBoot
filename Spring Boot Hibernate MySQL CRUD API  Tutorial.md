@@ -295,9 +295,15 @@ spring.jpa.properties.hibernate.format_sql=true
 * Return the ResponseEntity by saving employee data into it
 * The REST API will create the resource that is why the HttpStatus will be set as created
 * We will add @RequestMapping annotation and will provide the base url on top the class, we can also define the url at @PostMapping but in order to maintain the employees url at common place we have defined it at @RequestMapping
-* Now run the spring boot application and test the restline api using postman
 
 ![Screenshot from 2022-06-08 11-57-18](https://user-images.githubusercontent.com/42698268/172546941-9320b2a5-ad91-46e7-b901-dd855b5306cd.png)
+
+
+* Now run the spring boot application and test the restline api using postman
+* Enter the URL
+* Select POST
+* Select body
+![Screenshot from 2022-06-09 12-47-14](https://user-images.githubusercontent.com/42698268/172788057-76be715e-85a7-4ddf-a1cf-a0dad465822e.png)
 
 
 ## Extract
