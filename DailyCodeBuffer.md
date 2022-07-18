@@ -16,3 +16,7 @@
   * How to implement matrix for your spring boot application
   * How to deploy your application to the production
   * Ways to deploy spring boot application to our server
+
+## Spring boot devtools
+``` <artifactId>spring-boot-devtools</artifactId>```
+Spring boot devtools helps us to run the project on the go, ie if you are currently woring on the project and you are making some changes, and you don't want to stop the project and run it again and again then you can add this dependency in your pom and you have to do little configurations, this will detect the changes and will run your project,i.e it supports live reload / live building functionality.
