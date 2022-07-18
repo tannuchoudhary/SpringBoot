@@ -13,4 +13,6 @@
   * Implement unit testing for all the layers(controller, service and db layer) using the junit and mockito
   * All will be done using in memory H2 database, and then will be configured uing any of the database like sql or mongodb
   * How to get the particular values from configuration files
- 
+  * How to implement matrix for your spring boot application
+  * How to deploy your application to the production
+  * Ways to deploy spring boot application to our server
