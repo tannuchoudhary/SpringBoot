@@ -4,7 +4,11 @@
 ![Screenshot from 2022-02-06 18-29-23](https://user-images.githubusercontent.com/42698268/153379293-ed8c4265-a90b-473d-9508-4c709301bf65.png)
 
 ![Screenshot from 2022-02-06 18-29-49](https://user-images.githubusercontent.com/42698268/153379301-6e9b2eca-956b-42a3-8f91-399ead8b1bf5.png)
- 
+ * security modules: for security in spring boot project
+ * for logging you can use logging
+ * you can connect to postgresql, mongodb, mysql, you can connect to any databases
+ * Metrics: helps us to check how the application is behaving in production
+ * 
 # 2. Selecting Dependencies which our project need
 * Spring web
 * Spring data JPA for connecting through database using JPA and Hybernet
@@ -24,11 +28,14 @@
 # 4. Import this project in your IDE
 
 ![Screenshot from 2022-02-10 15-15-18](https://user-images.githubusercontent.com/42698268/153380866-1a42193f-6e87-4ba3-8231-3482d5fb3c07.png)
-
+* application.properties: This is where we configure all the properties for our application as well as environment specific properties
+* Static and templates: Here we do all our web development
+* 
 # 5. Starting the server
 Run the DemoApplication.java, you will get an error because application will try to connect to the database
 * Open pom.xml
 * and comment the dependecy of spring-boot-starter-data-jpa
+* and reload the project, so that this dependency will be removed
 * This dependency will be added back once we are ready to connect it with database
 
 ![Screenshot from 2022-02-10 15-25-24](https://user-images.githubusercontent.com/42698268/153382722-6fb7ae9f-25e7-423e-887d-e861ac65311b.png)
