@@ -3,6 +3,12 @@
 
 ![Screenshot from 2022-02-06 18-29-23](https://user-images.githubusercontent.com/42698268/153379293-ed8c4265-a90b-473d-9508-4c709301bf65.png)
 
+# API
+![image](https://user-images.githubusercontent.com/42698268/217210610-053b54cf-c3dc-42e5-8a38-02c5fdbc65dc.png)
+![image](https://user-images.githubusercontent.com/42698268/217210881-d9c6663e-a429-4342-b101-acd4871344e1.png)
+![image](https://user-images.githubusercontent.com/42698268/217212176-0dc556c2-f18c-4aff-99d4-3ebd7f6f9709.png)
+![image](https://user-images.githubusercontent.com/42698268/217212902-04c1755c-a1c5-40e0-87e7-1889cffc2a58.png)
+
 ![Screenshot from 2022-02-06 18-29-49](https://user-images.githubusercontent.com/42698268/153379301-6e9b2eca-956b-42a3-8f91-399ead8b1bf5.png)
  * security modules: for security in spring boot project
  * for logging you can use logging
