@@ -91,5 +91,11 @@ Run the DemoApplication.java, you will get an error because application will try
 
 ![Screenshot from 2022-02-10 15-51-51](https://user-images.githubusercontent.com/42698268/153387247-6c49ceb6-aaf4-4fec-a844-d4ac1fd5c4a5.png)
  
+ * we can also pass it as list
 ![Screenshot from 2022-02-10 15-51-59](https://user-images.githubusercontent.com/42698268/153387317-89e77448-b61f-4c23-a197-7ec3b77a1b01.png)
 
+* let us implement this student class and implement all the functionalites with it
+![image](https://user-images.githubusercontent.com/42698268/219276970-3a51cae4-908f-4d6d-9fcc-25e87fb5e458.png)
+![image](https://user-images.githubusercontent.com/42698268/219277173-d2b6ffee-063e-4fe1-8fbd-e10a138b610e.png)
+
+  
