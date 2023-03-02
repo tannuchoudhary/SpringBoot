@@ -87,15 +87,113 @@ Run the DemoApplication.java, you will get an error because application will try
 ![Screenshot from 2022-02-10 15-53-48](https://user-images.githubusercontent.com/42698268/153387743-04f61857-faa3-4011-9eff-6d0a43264bc8.png)
 
 
-## b. We can see that json is back
+## b.we can also pass it as list
 
 ![Screenshot from 2022-02-10 15-51-51](https://user-images.githubusercontent.com/42698268/153387247-6c49ceb6-aaf4-4fec-a844-d4ac1fd5c4a5.png)
  
- * we can also pass it as list
+ 
+ 
 ![Screenshot from 2022-02-10 15-51-59](https://user-images.githubusercontent.com/42698268/153387317-89e77448-b61f-4c23-a197-7ec3b77a1b01.png)
 
 * let us implement this student class and implement all the functionalites with it
+* Let us take a class and model it as a student with all the attributes
+
 ![image](https://user-images.githubusercontent.com/42698268/219276970-3a51cae4-908f-4d6d-9fcc-25e87fb5e458.png)
 ![image](https://user-images.githubusercontent.com/42698268/219277173-d2b6ffee-063e-4fe1-8fbd-e10a138b610e.png)
 
-  
+### Implementation:
+* Define the fields of student and generate no arg constructor for class, constructors for each field, one constructor without id as it will be given by db, getters, setters and toString for each field
+
+```java
+package com.example.demo.student;
+
+import java.text.DateFormat;
+import java.time.LocalDate;
+
+public class Student {
+    private Long id;
+    private String name;
+    private String email;
+    private LocalDate dob;
+    private Integer age;
+
+
+    public Student() {
+    }
+
+    public Student(Long id,
+                   String name,
+                   String email,
+                   LocalDate dob,
+                   Integer age) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.dob = dob;
+        this.age = age;
+    }
+
+    public Student(String name,
+                   String email,
+                   LocalDate dob,
+                   Integer age) {
+        this.name = name;
+        this.email = email;
+        this.dob = dob;
+        this.age = age;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", dob=" + dob +
+                ", age=" + age +
+                '}';
+    }
+}
+
+
+```
