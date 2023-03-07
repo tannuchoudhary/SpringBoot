@@ -386,6 +386,16 @@ CREATE DATABASE student
 * Now you can also use SQL Shell, as it gets automatically downloaded with pgAdmin, do the following settings and you are good to go
 ![image](https://user-images.githubusercontent.com/42698268/223468330-5e8cf6fd-8098-4924-b562-2b1de380d7b3.png)
 
+![image](https://user-images.githubusercontent.com/42698268/223470639-20fcea5e-736e-4775-ab34-1cf7efef43f8.png)
+
+* Now we are done with the setup of postgresql, and we have granted all the permissions
+* now go to the pom file and uncomment the jpa and postgresql dependency
+* now run the code, you can see that now you are connected with the DB
+* But we haven't got any table created in the database
+
+## C. JPA and @Entity
+* Now what we need to do is to take the student details and using spring data jpa we are going to add them to the database by creating a table inside a db and then perform a crud operation against our database
+* Now let us add @Entity and @Table 
 
 
 
