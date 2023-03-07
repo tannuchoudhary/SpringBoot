@@ -234,7 +234,7 @@ public class DemoApplication {
 	}
 }
 ```
-# Controller layer
+# 6. Controller layer
 * let us add a controller layer inside student package
 * and add @RestController, @RequestMapping, path in request mapping and the method which returns the data of student in the controller class
 
@@ -268,3 +268,133 @@ public class StudentController {
 
 }
 ```
+# 7. Now let us add a service layer or also called as a business layer
+![image](https://user-images.githubusercontent.com/42698268/223364449-281ff63e-c055-4168-83bd-12ad57583aef.png)
+
+* Now understand that, api  layer should talk to service layer to get some data and service layer should talk to data access layer to get some data
+* So create a StudentService class, and cut the getStudent method from controller and paste it in service method and now in controller we will just call that method
+* to call the method from service, we need to create an object of service class in controller class, so create an object, instantiate it using constructor and then call the method getStudents here in controller
+* this is a much better design approach and we are using the n tier design pattern
+* right now, whatever we are returning from getStudents is a static list, we want it to come from a database, so we will connect it with db later
+
+# 8. ANnotations and Dependency Injection
+* now we have to create an instance of StudentService to run the code
+* two ways to create an instance:
+	* using new keyword
+	* using dependency injection
+* dependency injection is preferred to maintain loose coupling
+* here we will use @Autowired which will tell the constructor to automatically instatiate the StudentService
+* also we have to tell that this StudentService is a class that has to be instantiated and has to be a spring bean 
+* so we will use @Component for that, now we can see that the error is gone, and code is running perfectly
+
+### Controller class
+```java
+package com.example.demo.student;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.List;
+
+
+@RestController
+@RequestMapping(path = "api/v1/student")
+public class StudentController {
+
+    private final StudentService studentService;
+    @Autowired
+    public StudentController(StudentService studentService){
+        this.studentService = studentService;
+    }
+
+    @GetMapping
+    public List<Student> getStudents(){
+        return studentService.getStudents();
+    }
+
+}
+```
+### Service class
+```package com.example.demo.student;
+
+import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.List;
+
+@Component
+public class StudentService {
+    public List<Student> getStudents(){
+
+        return List.of(
+                new Student(
+                        1L,
+                        "Tannu",
+                        "tannu@gmail.com",
+                        LocalDate.of(1999, Month.JANUARY, 10),
+                        23
+                )
+        );
+    }
+}
+```
+* but we don't want it to be any regular component, we want it to be a service component, so we will annotate it with @Service
+* so service and component are basically same, but service is more for semantic and readabilty which tells that this class is meant to be a service class
+* so for controller, we use ```@RestController``` and for service we use ```@Service```
+![image](https://user-images.githubusercontent.com/42698268/223372919-f904cc20-807e-41f1-8e08-ab7a1d643605.png)
+* so we can see that project is running fine and we have separated the layers as controller and service layer and controller layer is talkin gsuccesfully to service layer and service layer is giving back some data to the controller layer(API Layer)
+
+# 9. Let us create a Data Access layer
+
+## A. Properties file
+* We will go here to take some code https://github.com/amigoscode/spring-data-jpa-course
+* let us copy application.properties file from here and paste it in your own project
+* The below is the configuration we need in order to connect to a DB
+
+```java
+spring.datasource.url=jdbc:postgresql://localhost:5432/student
+spring.datasource.username=
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+```
+* As we are using postgreSQL, the default port is 5432
+* if you are using postgres app, then username password will not be required, else you have to provide it
+* ```jpa.hibernate.ddl-auto=create-drop``` means we will have a clean sate everytime we run the application
+
+
+## B. Connection to Database
+* How to setup postgreSQL in full detail - https://www.sqlshack.com/how-to-install-postgresql-on-windows/
+* this got generated while creating a DB
+```SQL
+CREATE DATABASE student
+    WITH
+    OWNER = postgres
+    TEMPLATE = postgres
+    ENCODING = 'UTF8'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
