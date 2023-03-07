@@ -197,3 +197,74 @@ public class Student {
 
 
 ```
+* This will be your main function
+```java
+package com.example.demo;
+
+import com.example.demo.student.Student;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.List;
+
+@SpringBootApplication
+public class DemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+
+
+	}
+	@GetMapping
+	public List<Student> hello(){
+
+		return List.of(
+				new Student(
+						1L,
+						"Tannu",
+						"tannu@gmail.com",
+						LocalDate.of(1999, Month.JANUARY, 10),
+						23
+				)
+		);
+	}
+}
+```
+# Controller layer
+* let us add a controller layer inside student package
+* and add @RestController, @RequestMapping, path in request mapping and the method which returns the data of student in the controller class
+
+```java
+package com.example.demo.student;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.List;
+
+@RestController
+@RequestMapping(path = "api/v1/student")
+public class StudentController {
+    @GetMapping
+    public List<Student> getStudents(){
+
+        return List.of(
+                new Student(
+                        1L,
+                        "Tannu",
+                        "tannu@gmail.com",
+                        LocalDate.of(1999, Month.JANUARY, 10),
+                        23
+                )
+        );
+    }
+
+}
+```
