@@ -383,6 +383,8 @@ CREATE DATABASE student
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 ```
+* Now you can also use SQL Shell, as it gets automatically downloaded with pgAdmin, do the following settings and you are good to go
+![image](https://user-images.githubusercontent.com/42698268/223468330-5e8cf6fd-8098-4924-b562-2b1de380d7b3.png)
 
 
 
