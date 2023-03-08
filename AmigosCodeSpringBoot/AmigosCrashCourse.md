@@ -395,7 +395,16 @@ CREATE DATABASE student
 
 ## C. JPA and @Entity
 * Now what we need to do is to take the student details and using spring data jpa we are going to add them to the database by creating a table inside a db and then perform a crud operation against our database
-* Now let us add @Entity and @Table 
+* Now let us add @Entity for hibrnate and @Table for table in database
+* javax.persistence.Entity: Specifies that the class is an entity. This annotation can be applied on Class, Interface of Enums.
+
+```
+import javax.persistence.Entity;
+
+@Entity
+public class Employee implements Serializable {
+}
+```
 
 
 
