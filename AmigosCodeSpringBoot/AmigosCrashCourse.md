@@ -396,9 +396,12 @@ CREATE DATABASE student
 ## C. JPA and @Entity
 * Now what we need to do is to take the student details and using spring data jpa we are going to add them to the database by creating a table inside a db and then perform a crud operation against our database
 * Now let us add @Entity for hibrnate and @Table for table in database
+
+
+### 1. @Entity
 * javax.persistence.Entity: Specifies that the class is an entity. This annotation can be applied on Class, Interface of Enums.
 
-```
+```java
 import javax.persistence.Entity;
 
 @Entity
@@ -406,9 +409,70 @@ public class Employee implements Serializable {
 }
 ```
 
+### 2. @Table
+It specifies the table in the database with which this entity is mapped. In the example below the data will be stores in the “employee” table. Name attribute of @Table annotation is used to specify the table name.
 
+```java
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "employee")
+public class Employee implements Serializable {
+}
+```
 
+### 3. @Column
+Specify the column mapping using @Column annotation. Name attribute of this annotation is used for specifying the table’s column name.
+
+```java
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "employee")
+public class Employee implements Serializable {
+ 
+  @Column(name = "employee_name")
+  private String employeeName;
+}
+```
+
+### 4. @Id
+This annotation specifies the primary key of the entity.
+
+```java
+import javax.persistence.*;
+
+@Entity
+@Table(name = "employee")
+public class Employee implements Serializable { 
+  @Id
+  @Column(name = "id")
+  private int id;
+}
+```
+
+### 5. @GeneratedValue
+
+This annotation specifies the generation strategies for the values of primary keys.
+
+```java
+import javax.persistence.*;
+
+@Entity
+@Table(name = "employee")
+public class Employee implements Serializable {
+  
+  @Id
+  @Column(name = "id")
+  @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
+  private int id;
+}
+```
+
+### For more details, you can visit this [site](https://www.digitalocean.com/community/tutorials/jpa-hibernate-annotations)
 
 
 
