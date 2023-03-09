@@ -495,6 +495,9 @@ The @GeneratedValue consider the entry point for primary key generation, it prov
 * Argument:
 	1. strategy(Optional): The primary key generation strategy that the persistence provider must use to generate the annotated entity primary key.
 	2. generator (Optional): The name of the primary generator to use as specified in the SequenceGenerator or TableGenerator.
+
+![image](https://user-images.githubusercontent.com/42698268/224113982-39938a29-41bf-468d-879c-f8d9c4acb370.png)
+
 ### For more details, you can visit this [site](https://www.digitalocean.com/community/tutorials/jpa-hibernate-annotations)
 
 
