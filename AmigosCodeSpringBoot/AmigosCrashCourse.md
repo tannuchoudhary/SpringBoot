@@ -454,9 +454,18 @@ public class Employee implements Serializable {
 }
 ```
 
-### 5. @GeneratedValue
+### 5. Sequence Generator
 
-This annotation specifies the generation strategies for the values of primary keys.
+The @SequenceGenerator annotation defines a primary key generator that may be referenced by name when a generator element is specified for the GeneratedValue annotation.A sequence generator may be specified on the entity class or on the primary key field or property.
+
+* Target: Type, Method and Field
+* Uses:@SequenceGenerator
+* Argument:
+	* name (Required): A unique generator name that can be referenced by one or more classes to be the generator for primary key values.
+	* sequenceName (Optional): The name of the database sequence object from which to obtain primary key values.
+	* initialValue (Optional): The value from which the sequence object is to start generating.
+	* allocationSize (Optional): The amount to increment by when allocating sequence numbers from the sequence.
+
 
 ```java
 import javax.persistence.*;
@@ -471,7 +480,21 @@ public class Employee implements Serializable {
   private int id;
 }
 ```
+### 6. @GeneratedValue
 
+The @GeneratedValue consider the entry point for primary key generation, it provides the specification of generation strategies for the values of primary keys. The GeneratedValue annotation may be applied to a primary key property of field of an entity or mapped superclass  in a conjunction with the Id annotation. The values that can be used with the @GeneratedValue are those values defined inside the enum GenerationType. GenerationType.java
+
+``` public enum GenerationType {TABLE,SEQUENCE,IDENTITY,AUTO};```
+
+* TABLE: Is a generator type value indicates that the must assign primary keys for the entity using a Database Table to ensure uniqueness.
+* SEQUENCE & IDENTITY: Are a generator types that specify the use of a database sequence or identity column respectively.
+* AUTO: Is a generator type indicates that the persistence provider should select an appropriate strategy for the particular database.
+### Anatomy of @GeneratedValue
+* Target: Field and Method
+* Uses:@GeneratedValue
+* Argument:
+	1. strategy(Optional): The primary key generation strategy that the persistence provider must use to generate the annotated entity primary key.
+	2. generator (Optional): The name of the primary generator to use as specified in the SequenceGenerator or TableGenerator.
 ### For more details, you can visit this [site](https://www.digitalocean.com/community/tutorials/jpa-hibernate-annotations)
 
 
