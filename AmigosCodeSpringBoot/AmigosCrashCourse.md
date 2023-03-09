@@ -454,7 +454,7 @@ public class Employee implements Serializable {
 }
 ```
 
-### 5. Sequence Generator
+### 5. @SequenceGenerator
 
 The @SequenceGenerator annotation defines a primary key generator that may be referenced by name when a generator element is specified for the GeneratedValue annotation.A sequence generator may be specified on the entity class or on the primary key field or property.
 
