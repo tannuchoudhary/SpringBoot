@@ -503,6 +503,11 @@ The @GeneratedValue consider the entry point for primary key generation, it prov
 ### For more details, you can visit this [site](https://www.digitalocean.com/community/tutorials/jpa-hibernate-annotations)
 
 
+## D. JPA in Action
+
+* Let us connect to the postgreSQl and run the code and now check these commands in shell
+![image](https://user-images.githubusercontent.com/42698268/224538509-f6bad6e6-c0da-400d-a0d3-05f046d55f75.png)
+
 
 
 
