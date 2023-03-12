@@ -498,6 +498,8 @@ The @GeneratedValue consider the entry point for primary key generation, it prov
 
 ![image](https://user-images.githubusercontent.com/42698268/224113982-39938a29-41bf-468d-879c-f8d9c4acb370.png)
 
+* Now we have mapped this student class to a table in our database
+
 ### For more details, you can visit this [site](https://www.digitalocean.com/community/tutorials/jpa-hibernate-annotations)
 
 
