@@ -505,8 +505,36 @@ The @GeneratedValue consider the entry point for primary key generation, it prov
 
 ## D. JPA in Action
 
+![image](https://user-images.githubusercontent.com/42698268/224539418-00f2800f-ac61-436a-8112-ff34b820b0e7.png)
+
 * Let us connect to the postgreSQl and run the code and now check these commands in shell
 ![image](https://user-images.githubusercontent.com/42698268/224538509-f6bad6e6-c0da-400d-a0d3-05f046d55f75.png)
+* we can see that we have created a table in student database in intellij
+* We took a class and map that class to a table in database
+
+## E. Data Access layer
+* Now we are connected to the database, but the data access layer is missing 
+* so let us create an interface called StudentRepository
+* You can see the naming convention which is including ```Repository```, we are going to use this whenever we will be using JPA, and here we are
+* Now let us extend this StudentRepository with JpaRepository
+* now we have to pass generics as the type on which we are going to work upon and the type of the primary key, so we will pass Student and Id
+* Now let us annotate the interface with @Repository as this is going to work as a data access layer
+* Now this is all for this layer, now let us connect everything using dependency injection as we want to use this interface inside of our service
+* inject the repo and define constructor and Autowire it and then instead of returning the static list, try to return the data using the method of jpaRepo
+
+![image](https://user-images.githubusercontent.com/42698268/224544725-dafaba53-2b43-4151-86a0-e61079e73089.png)
+* Now we will add data of few students to this repository
+
+## F. Saving students data to database
+* After saving students data to the database, we will see that everything starts working, from api layer, to service layer, to data access layer to db, everything.
+* First of all, run the code before adding data and see what it will give
+* ![image](https://user-images.githubusercontent.com/42698268/224545340-b297317c-276b-499e-af18-9f72dfe55472.png)
+* it will give you an empty list
+* Now let us run the query on shell and we can see that it is also showing 0 rows 
+* ![image](https://user-images.githubusercontent.com/42698268/224545991-93e00f1e-85cf-4531-a2a0-4c28b73ba0ab.png)
+* Now let us add some student into the database, for that we have to create one configuration class called StudentConfig 
+* The @Configuration annotation indicates that the class is a source of bean definitions. We can also add it to multiple configuration classes.
+
 
 
 
