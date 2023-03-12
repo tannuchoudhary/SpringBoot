@@ -535,6 +535,49 @@ The @GeneratedValue consider the entry point for primary key generation, it prov
 * Now let us add some student into the database, for that we have to create one configuration class called StudentConfig 
 * The @Configuration annotation indicates that the class is a source of bean definitions. We can also add it to multiple configuration classes.
 
+* Configuration class:
+```java
+package com.example.demo.student;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.List;
+
+import static java.util.Calendar.JANUARY;
+
+@Configuration
+public class StudentConfig {
+
+    @Bean
+    CommandLineRunner commandLineRunner(StudentRepository repository){
+        return args -> {
+           Student mariam = new Student(
+                    "Mariam",
+                    "mariam.jamal@gmail.com",
+                    LocalDate.of(1998, Month.JANUARY, 11),
+                    23
+            );
+
+            Student alex = new Student(
+                    "Alex",
+                    "alex@gmail.com",
+                    LocalDate.of(1999, Month.FEBRUARY, 10),
+                    23
+            );
+            repository.saveAll(List.of(mariam, alex));
+        };
+    }
+}
+```
+* We have added data of the two students and saved them, now you can see both on browser and shell
+* ![image](https://user-images.githubusercontent.com/42698268/224550661-e8fe8d2b-dbff-49ff-a520-826084223a22.png)
+* ![image](https://user-images.githubusercontent.com/42698268/224550667-31240375-b42c-4884-adc6-acf22a02418f.png)
+
+
 
 
 
