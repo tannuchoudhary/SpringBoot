@@ -368,6 +368,7 @@ spring.jpa.properties.hibernate.format_sql=true
 * As we are using postgreSQL, the default port is 5432
 * if you are using postgres app, then username password will not be required, else you have to provide it
 * ```jpa.hibernate.ddl-auto=create-drop``` means we will have a clean sate everytime we run the application
+* The master password of your postgresql is "tannu"
 
 
 ## B. Connection to Database
@@ -576,6 +577,7 @@ public class StudentConfig {
 * We have added data of the two students and saved them, now you can see both on browser and shell
 * ![image](https://user-images.githubusercontent.com/42698268/224550661-e8fe8d2b-dbff-49ff-a520-826084223a22.png)
 * ![image](https://user-images.githubusercontent.com/42698268/224550667-31240375-b42c-4884-adc6-acf22a02418f.png)
+
 
 
 
