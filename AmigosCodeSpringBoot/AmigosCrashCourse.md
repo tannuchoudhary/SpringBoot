@@ -368,7 +368,7 @@ spring.jpa.properties.hibernate.format_sql=true
 * As we are using postgreSQL, the default port is 5432
 * if you are using postgres app, then username password will not be required, else you have to provide it
 * ```jpa.hibernate.ddl-auto=create-drop``` means we will have a clean sate everytime we run the application
-* The master password of your postgresql is "tannu"
+* The master password of your postgresql is "tannu" or may be TLT@#3(complete words in small letter)
 
 
 ## B. Connection to Database
@@ -577,6 +577,70 @@ public class StudentConfig {
 * We have added data of the two students and saved them, now you can see both on browser and shell
 * ![image](https://user-images.githubusercontent.com/42698268/224550661-e8fe8d2b-dbff-49ff-a520-826084223a22.png)
 * ![image](https://user-images.githubusercontent.com/42698268/224550667-31240375-b42c-4884-adc6-acf22a02418f.png)
+
+### 1. @Transient
+@Transient annotation is used to mark a field to be transient for the mapping framework, which means the field marked with @Transient is ignored by mapping framework and the field not mapped to any database column (in RDBMS) or Document property (in NOSQL).
+* Now we don't want to store age in db, as it can be calculated so we will mark it as @Transient, so we will remove age from student.java class and then from configuration class
+* now we have to set the age by calculation it usin gdob, we will do it in student.java class in getter method i.e getAge method
+
+```java
+public Integer getAge() {
+        return Period.between(this.dob, LocalDate.now()).getYears();
+    }
+```
+* Now we can see that there is no field as age in our db
+![image](https://user-images.githubusercontent.com/42698268/227465054-a2a6c877-12d9-4b05-aaf0-a3f3185ac6a3.png)
+
+# 10. Coming back to the API layer
+## Let us create POST, PUT and DELETE mapping
+
+
+
+### A. @PostMapping
+* Post mapping is used when we want to add new resources in our system, in our case when we want to add new student in our system
+![image](https://user-images.githubusercontent.com/42698268/227466228-20d09d13-02b5-476e-b0ca-712d3cb17677.png)
+
+* for post request, let us send above payload to our server and let us see if this email exists or not
+* if it does not exists, then we will save it to the database
+* if it does, then we are going to throw an exception
+* Now let us got to the controller and implement that api which is going to take the payload and store it in our system
+
+```java
+ @PostMapping
+    public void registerNewStudent(@RequestBody Student student){
+        studentService.addNewStudent(student);
+    }
+```
+* Now open the postman and post the message
+* ![image](https://user-images.githubusercontent.com/42698268/227583352-0861759d-6ea1-4859-a4d3-817204dffc1d.png)
+
+* you'll get something like this on your intellij console
+* ![image](https://user-images.githubusercontent.com/42698268/227583490-a03cf0c5-4f69-436f-bd8d-857fd30af831.png)
+* Here i was stuck for 2 hours because, i was posting wrong message having first name and last name(LOL)
+* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
