@@ -667,6 +667,15 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 * Add this in your controller 
 
 ## C. @PutMapping
+* do the same for the put mapping as you did for all of them
+
+# 11. Create a jar for the application
+* clean(target deleted)
+* install(target created again)
+* open terminal in intellij
+* do ```cd target```
+* run ```java -jar jarname.jar```
+* you can run more than one instance on different ports by just changing the port, run ```java -jar jarname.jar --server.port=8081```
 
 
 
