@@ -596,7 +596,7 @@ public Integer getAge() {
 
 
 
-### A. @PostMapping
+## A. @PostMapping for adding new student
 * Post mapping is used when we want to add new resources in our system, in our case when we want to add new student in our system
 ![image](https://user-images.githubusercontent.com/42698268/227466228-20d09d13-02b5-476e-b0ca-712d3cb17677.png)
 
@@ -617,12 +617,56 @@ public Integer getAge() {
 * you'll get something like this on your intellij console
 * ![image](https://user-images.githubusercontent.com/42698268/227583490-a03cf0c5-4f69-436f-bd8d-857fd30af831.png)
 * Here i was stuck for 2 hours because, i was posting wrong message having first name and last name(LOL)
-* 
+* Now we will check whether email exists or not, if doesn't then we save, if not then throw an exception
 
+### 1. Writing Business Logic
+* As now we are going to write a business logic for student
+* go to the student StudentRepository and create a custom function to find the user by email
+* we will use ```Optional``` in java for that
+```java
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Long> {
+    // All three lines below represents the same code
+    // SELECT * FROM student WHERE email = ?
+    // @Query("SELECT s FROM Student s WHERE s.email=?1")
+    Optional<Student> findStudentByEmail(String email);
+}
+```
+* we can also write it as using JPQL ``` @Query("SELECT s FROM Student s WHERE s.email=?1")```
+* SQL works directly against relational database tables, records and fields, whereas JPQL works with Java classes and instances. For example, a JPQL query can retrieve an entity object rather than field result set from database, as with SQL.
+* Here ```Student``` in query is the Student class and @Entity is mentioned in the Student class and hence we can access all of the properties of the Student class
+* Now let us add the validation code in service clas
+```java
+   public void addNewStudent(Student student) {
+        Optional<Student> studentOptional = studentRepository.findStudentByEmail(student.getEmail());
+        if(studentOptional.isPresent()){
+            throw new IllegalStateException("email taken");
+        }
+        studentRepository.save(student);
+    }
 
+}
+```
+* this will just validate whether the email is already present or not, just a basic validation, you can add many more things here for validation
 
+### 2. Testing Post Request
+* Now run the program, and post the request to Postman, and then check the db
+* ![image](https://user-images.githubusercontent.com/42698268/227773553-8537dfa7-2355-43aa-8480-2689c213818d.png)
+* you can see that new user is added, and now try to add the same user again, you'll get this
+* ![image](https://user-images.githubusercontent.com/42698268/227773869-ae7fd99c-3886-41f5-b02b-a5da481342ae.png)
+* and on the console you will get this
+* ![image](https://user-images.githubusercontent.com/42698268/227773931-596c2a06-5db8-47e7-bd00-86e6867d081e.png)
+* now we are only getting error code and no message, so let us set the message
+* go to the application.properties file and set it as
+* now trigger the application again
+* as we start the application again, we loose everything so post the message 2 times, second time you will get this
+* ![image](https://user-images.githubusercontent.com/42698268/227774556-3b93bdad-4cee-4a3e-a7bc-07c44ec0db7f.png)
 
+## B. @DeleteMapping for Deleting Students
+* we want to delete students by id
+* Add this in your controller 
 
+## C. @PutMapping
 
 
 
