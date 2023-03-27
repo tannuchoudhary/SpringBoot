@@ -665,6 +665,8 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 ## B. @DeleteMapping for Deleting Students
 * we want to delete students by id
 * Add this in your controller 
+* ![image](https://user-images.githubusercontent.com/42698268/228044087-b5dd6989-0fe1-458e-864a-7cae5cc2f390.png)
+
 
 ## C. @PutMapping
 * do the same for the put mapping as you did for all of them
